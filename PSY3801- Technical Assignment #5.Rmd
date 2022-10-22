@@ -1,0 +1,143 @@
+---
+title: "PSY3801- Technical assignment #5"
+author: "Amanda Mae Woodward"
+date: "2022-10-18"
+output: html_document
+---
+# Overview
+
+In this technical assignment, you will have the opportunity to apply the statistical knowledge that you've learned so far. The assignment will require you to use R Studio. We recognize that doing both of these things may be new to you, so please make sure to ask your Lab TA, lecture TA, or Dr. Woodward any questions that may come up. Though the assignment is not due until Friday, it is strongly recommended that you start the assignment before then.
+
+## Part 1: 
+Anime has become increasingly popular and is more shows are available to watch. We are interested in whether interest in anime has also increased. We collect a sample of 36 undergraduate students and ask them to rate how many hours of anime they watch in a week. We happen to know that the average amount of time spent watching anime is 3.5 hours/week with a standard deviation of .5.   
+
+### Preregistration
+1. What is the research question? 
+
+**your text here** 
+
+2. What are the hypotheses? 
+
+**your text here** 
+
+3. Who is in the sample? 
+
+**your text here** 
+
+4. What are the variables? How are they measured? 
+
+**your text here** 
+
+5. What statistic will you calculate? Why? 
+
+**your text here** 
+
+### Null Hypothesis Significance Test: 
+
+Now that you've completed the preregistration, we can collect data. Here is information about the data you collected: 
+
+The sample watches anime an average of  3.15 hours per week. 
+
+6. What are your hypotheses?
+
+**your text here** 
+
+7. What statistic should you calculate?
+
+**your text here** 
+
+8. What do you know about your data? 
+
+**your text here** 
+
+9. What is your alpha value? Why?
+
+**your text here** 
+
+10. What is your critical statistic? 
+
+```{r}
+#your code here
+```
+
+11. Calculate your statistic
+
+```{r}
+#your code here
+```
+
+12. What conclusion can you make? Interpret it in the context of your problem. 
+
+**your text here**
+
+## Part 2:
+13. Import the lab08.csv file 
+You are interested in how your sample did on the Ravens progressive matrices (PSY3801lab08.csv) task compared to the population. You happen to know that the average score is a 7.5. You plan to collect data from 31 participants. 
+
+### Preregistration
+13. What is the research question? 
+
+**your text here** 
+
+14. What are the hypotheses? 
+
+**your text here** 
+
+15. Who is in the sample? 
+
+**your text here** 
+
+16. What are the variables? How are they measured? 
+
+**your text here** 
+
+17. What statistic will you calculate? Why? 
+
+**your text here** 
+
+### Null Hypothesis Significance Test: 
+
+Now that you've completed the preregistration, we can collect data. Import the lab08.csv file 
+```{r}
+#your code here
+```
+
+19. What are your hypotheses?
+
+**your text here** 
+
+20. What statistic should you calculate?
+
+**your text here** 
+
+21. What do you know about your data? 
+
+**your text here** 
+
+22. What is your alpha value? Why?
+
+**your text here** 
+
+23. What is your critical statistic value? 
+
+```{r}
+#your code here
+```
+
+24. Calculate your statistic
+
+```{r}
+#your code here
+```
+
+25. What conclusion can you make? Interpret it in the context of your problem. 
+
+**your text here**
+
+26. Calculate and interpret the effect size. 
+
+```{r}
+
+```
+
+

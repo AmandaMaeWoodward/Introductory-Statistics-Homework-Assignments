@@ -1,0 +1,56 @@
+---
+title: "PSY3801 - Technical Assignment 4"
+author: "Amanda Mae Woodward"
+date: "2022-10-03"
+output: html_document
+---
+
+# Overview
+
+In this technical assignment, you will have the opportunity to apply the statistical knowledge that you've learned so far. The assignment will require you to use R Studio. We recognize that doing both of these things may be new to you, so please make sure to ask your Lab TA, lecture TA, or Dr. Woodward any questions that may come up. Though the assignment is not due until Friday, it is strongly recommended that you start the assignment before then.
+
+### Finding Probabilities 
+1. What is the probability of obtaining  a standard score of 1.5 or lower? 
+
+```{r}
+pnorm(1.5)
+```
+
+2.What is the probability of obtaining  a standard score of 1.5 or higher? 
+
+```{r}
+1- pnorm(1.5)
+```
+
+3. We know that the average person's happiness score is 7.2 with a standard deviation of 2.1. What is the probability of obtaining a happiness rating of 8.4 or higher? 
+```{r}
+z<- (8.4-7.2)/2.1
+1-pnorm(z)
+```
+
+
+### Finding # of people
+1. How many people would we expect to have a happiness rating of 8.4 or higher in a sample of 1000 people? (round to the nearest whole person)
+```{r}
+(1-pnorm(z))*1000
+```
+284 people 
+
+2. How many people would we expect to have a happiness rating of 8.4 or higher in a sample of 100 people? (round to the nearest whole person) 
+```{r}
+(1-pnorm(z))*100
+```
+29 people 
+### Finding z scores (standard scores)
+1. What is the z score associated with the smallest, or lowest, 2.5% of the distribution? 
+```{r}
+qnorm(.025)
+```
+
+2. What is the z score associated with the largest, or highest, 2.5% of the distribution? 
+```{r}
+qnorm(.975)
+```
+
+
+

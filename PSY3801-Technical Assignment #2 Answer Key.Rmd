@@ -1,0 +1,117 @@
+---
+title: 'PSY3801- Technical Assignment #2 (Week 3)'
+author: "Amanda Mae Woodward"
+date: "9/20/2022"
+output: html_document
+---
+
+# Overview
+In this technical assignment, you will have the opportunity to apply the statistical knowledge that you’ve learned so far. The assignment will require you to use R Studio and import data. We recognize that doing both of these things may be new to you, so please make sure to ask your Lab TA, lecture TA, or Dr. Woodward any questions that may come up. Though the assignment is not due until Friday, it is strongly recommended that you start the assignment before then.
+
+## Getting Started:
+1. Download the World Happiness Report 2021 data from Canvas.
+2. Open this data in R Studio (Hint: Select “Import Data” from the Global Environment and choose “From Text Base.” It will be helpful for you to know where your downloaded data went on your computer). Make sure you copy the import code into your R Markdown file.
+```{r}
+#make sure that you copy the code to import data here 
+happyDat <- read.csv("~/Downloads/World Hppiness Report 2021.csv")
+```
+
+## Understanding your Data:
+1. View your dataset in R Studio. (Do NOT write this code in your markdown file. just in the console.) What do you notice about it? (e.g. What variables are in the file?)
+
+**there are variables indicating countries, region of the world, social support, generosity and dystopia. country and region are qualitative while social support, generosity and dystopia are quantitative. all quantitative variables are decimals**
+
+## Visualizing your data
+
+1. Print the regionalIndicator data (Hint: To print variable values, you only need to write data$column in a code chunk)
+
+```{r}
+#your code goes here
+happyDat$regionalIndicator
+```
+
+2. Create a simple frequency table of regionalIndicator 
+
+```{r}
+#your code goes here
+table(happyDat$regionalIndicator)
+```
+
+3. Describe what you see in the simple frequency table. 
+
+**I see how many countries are in each region. The region with the most responses is Sub-Saharan Africa and the region with the least responses is North America**
+
+4. What type of graph would be appropriate to show the regionalIndicator variable? Explain your answer
+
+**bar graph because it is categorical data**
+
+5. Create the graph that you chose in #4. 
+
+```{r}
+library(ggplot2)
+ggplot(happyDat, aes(regionalIndicator))+geom_bar()
+```
+
+6. What is the mode of regional indicator? 
+
+```{r}
+library(modeest)
+mfv(happyDat$regionalIndicator)
+```
+
+7. Is the mode consistent with what is presented in your graph? 
+
+**yes, Sub-Saharan Africa is the highest point on the graph and also the mode**
+
+8. Create a simple frequency table for socialSupport.
+
+```{r}
+#your code goes here
+happyDat$socialSupport
+range(happyDat$socialSupport)
+table(factor(happyDat$socialSupport, .463:.983)) #this is not correct 
+```
+
+```{r}
+#fixed code
+seq(.463, .983, by= 0.001)
+table(factor(happyDat$socialSupport, seq(.463, .983, by= 0.001)))
+```
+
+```{r}
+#learn a little more
+happyDat$socialSupport2<- round(happyDat$socialSupport, digits=2)
+range(happyDat$socialSupport2)
+table(factor(happyDat$socialSupport2, seq(.46, .98, by= 0.01)))
+```
+
+
+9. Create a grouped frequency table for socialSupport. You should use 10 intervals
+
+```{r}
+#your code goes here
+library(Hmisc)
+groups<-cut2(happyDat$socialSupport, g=10)
+table(groups)
+```
+
+10. What type of graph is appropriate for the socialSupport data? 
+
+**a histogram or frequency polygon are appropriate. you could also use a boxplot** 
+
+11. Create the graph you identified in #10. 
+
+```{r}
+#your code goes here
+ggplot(happyDat,aes(socialSupport))+geom_freqpoly()
+ggplot(happyDat,aes(socialSupport))+geom_histogram()
+ggplot(happyDat,aes(socialSupport))+geom_boxplot()
+```
+
+12. Create a histogram of the socialSupport data that uses 10 bins for the data. 
+
+```{r}
+#your code goes here
+ggplot(happyDat,aes(socialSupport))+geom_histogram(bins=10)
+```
+

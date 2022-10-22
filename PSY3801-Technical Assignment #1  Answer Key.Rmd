@@ -1,0 +1,88 @@
+---
+title: "PSY3801- Technical Assignment #1"
+author: "Amanda Mae Woodward"
+date: "9/13/2022"
+output: html_document
+---
+## Overview
+
+In this technical assignment, you will have the opportunity to apply the statistical knowledge that you’ve learned so far. The assignment will require you to use R Studio and import data. We recognize that doing both of these things may be new to you, so please make sure to ask your Lab TA, lecture TA, or Dr. Woodward any questions that may come up. Though the assignment is not due until Friday, it is strongly recommended that you start the assignment before then.
+
+## Getting Started:
+1. Download the World Happiness Report 2021 data from Canvas.
+2. Open this data in R Studio (Hint: Select “Import Data” from the Global Environment and choose “From Text Base.” It will be helpful for you to know where your downloaded data went on your computer). Make sure you copy the import code into your R Markdown file.
+
+```{r}
+happyDat <- read.csv("~/Desktop/PSY3801- Lab 2/world-happiness-report-2021.csv")
+```
+
+
+## Understanding your Data:
+
+1. View your dataset in R Studio. (Do NOT write this code in your markdown file. just in the console.)
+2. Print only the values in the Social Support column. (Hint: Remember Data$column)
+```{r}
+happyDat$socialSupport
+```
+
+3. What do you think the data in the Social Support data are? (There is no one correct answer- I haven't told you what these values mean. We want you to think critically about the information being provided to you.)
+
+**the social support data are probably a measure of how supported people feel by their social relationships.**
+
+4. What scale of measurement was likely used to collect the data in the Social Support Column? How do you know?
+
+**data are quantitative because there are numbers. I think they may be ratio level because i think there could be a meaningful 0 on this scale and there are equal intervals between numbers**
+
+**Note** students could also argue for interval level data.
+
+
+5. Print only the values in the Country name column.
+```{r}
+happyDat$countryName
+```
+
+6. What do you think the data in the Country name column mean?
+
+**I think they are the names of countries around the world**
+
+7. What scale of measurement was likely used to collect the data in the Country name column? How do you know?
+
+**the data are qualitative. they are also nominal because country names are categories that cannot be ordered**
+
+## Descriptive Statistics:
+1. Which measure of central tendency would be appropriate to summarize the Regional indicator column? Explain why.
+
+**mode because it is qualitative data**
+
+2. Calculate the measure of central tendency for regional indicator that you identified.
+
+```{r}
+library(modeest)
+mfv(happyDat$regionalIndicator)
+```
+
+3. Calculate all three measures of central tendency for dystopia.
+```{r}
+mean(happyDat$dystopia)
+median(happyDat$dystopia)
+mfv(happyDat$dystopia)
+```
+
+4. Are the dystopia data skewed? Explain your reasoning
+
+**no- the measures of central tendency are all identical. these data are not skewed**
+
+5. Calculate the standard deviation of the generosity column. What does this value tell us?
+
+```{r}
+sd(happyDat$generosity)
+```
+it tells us how spread out the data are. specifically, standard deviation is telling us that the average squared distance from the mean is .15
+
+6. Calculate the range for the social support column. What are the minimum and maximum values for this variable?
+
+```{r}
+range(happyDat$socialSupport)
+.983-.463
+```
+the minimum value is .463 and the maximum is .983

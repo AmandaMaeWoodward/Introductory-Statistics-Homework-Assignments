@@ -1,0 +1,93 @@
+---
+title: "PSY3801- Technical Assignment #3"
+author: "Amanda Mae Woodward"
+date: "2022-09-27"
+output: html_document
+---
+
+# Overview
+
+In this technical assignment, you will have the opportunity to apply the statistical knowledge that you've learned so far. The assignment will require you to use R Studio and import data. We recognize that doing both of these things may be new to you, so please make sure to ask your Lab TA, lecture TA, or Dr. Woodward any questions that may come up. Though the assignment is not due until Friday, it is strongly recommended that you start the assignment before then.
+
+## Getting Started:
+
+1.  Download the data science salary data from Canvas.
+2.  Open this data in R Studio (Hint: Select "Import Data" from the Global Environment and choose "From Text Base." It will be helpful for you to know where your downloaded data went on your computer). Make sure you copy the import code into your R Markdown file.
+
+```{r}
+#make sure that you copy the code to import data here (Hint: It includes read.csv() or read_csv). Note: understanding file paths isn't always the easiest, if you have ANY questions, please let us know
+salaryDat<- read.csv("~/Downloads/ds_salaries.csv")
+```
+
+## Understanding your Data:
+
+1.  View your dataset in R Studio. (Do NOT write this code in your markdown file. just in the console.) What do you notice about it? (e.g. What variables are in the file?)
+
+**the data are about data scientist salaried. it includes a column for participant number, year the salary was collected, type of job, salary in us dollars, and company information**
+
+2.  Print the salary_in_usd column. (Hint: To print variable values, you only need to write data\$column in a code chunk)
+
+```{r}
+salaryDat$salary_in_usd
+```
+
+3.  What type of information do you think is contained in this variable? (There is no one correct answer- I haven't told you what these values mean. We want you to think critically about the information being provided to you.)
+
+**it appears to be information about people's salaries. it is quantitative/continuous data**
+
+## Standard Scores and Z scores
+
+1.  Create a graph of the salary_in_usd variable. (Hint: remember to use the ggplot library)
+
+```{r}
+library(ggplot2)
+ggplot(salaryDat, aes(salary_in_usd))+geom_bar()
+```
+
+2.  calculate z scores for all salary_in_usd scores.
+
+```{r}
+scale(salaryDat$salary_in_usd)
+```
+
+3. Save your standard scores (z scores) from #2 to the dataset. (Hint use data$column<- code to make standard scores)
+
+```{r}
+salaryDat$zscore<-scale(salaryDat$salary_in_usd)
+```
+
+4. make a graph of the zscores you've created
+
+```{r}
+ggplot(salaryDat, aes(zscore))+geom_bar()
+```
+
+5. What do you notice about the two graphs? 
+
+**they are the same shape, but the x axis changes**
+
+## calculating standard scores
+
+1. Aria wants to compare scores that students recieve on case study assignments. They know that the average case study score is 88.7 and has a standard deviation of 3.8. What is the standard score for a student who received a 93? 
+
+```{r}
+(93-88.7)/3.8
+```
+
+2. Interpret the z score (standard score) that you've calculated. 
+
+**the student scores 1.13 standard deviations above the mean**
+
+3. On a standard normal distribution, what is the probability of obtaining a z score less than or equal to 2? 
+
+```{r}
+pnorm(2)
+```
+
+4. On a standard normal distribution, what is the z score associated with the lower .05 of the distribution? What about the upper .05 of the distribution?  
+```{r}
+qnorm(.05)
+qnorm(.95)
+```
+
+

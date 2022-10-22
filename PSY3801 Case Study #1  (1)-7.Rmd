@@ -1,0 +1,154 @@
+---
+title: "Case Study #1"
+author: "Amanda Mae Woodward"
+date: "2022-10-10"
+output: html_document
+---
+# Case Study: 
+
+## Instructions: 
+
+The purpose of this case study is to allow you to apply both your statistical knowledge and problem-solving skills to a real-world example. This assignment will build off technical assignments 1 – 3. You are expected to complete the assignment independently. Should you have any questions or programming issues, you should email your lab section TA, lecture TA, and Dr. Woodward on the same email (see information about how to cc people on emails). Discussing this case study with your peers prior to the peer review is considered academic dishonesty. 
+
+As a reminder, there can be more than one accurate way to solve a problem. You will be graded on the ways you work to solve the problem, and your ability to articulate your problem-solving process in addition to obtaining the correct answer.
+
+### Scenario: 
+
+Spotify has released the most listened to songs between 2010 and 2019. They are trying to get a better sense of their data but realize that there is just too much to scroll through (1000 rows!). They have decided to hire you to help them make sense of their data. For your case study, you will be asked to do the following: 
+  a.	Identify the appropriate statistics to calculate for each question they have
+  b.	Calculate the necessary statistics
+  c.	Create a visual that corresponds to the statistic you’ve identified
+  d.	An explanation for your choices 
+
+### Part 1:
+
+The executives at Spotify want to know which artist appears in the top song chart the most between 2010 and 2019.
+
+1. Upload the spotify dataset. (1 point)
+```{r}
+
+```
+
+
+2. 	Print the column in the dataframe that would best answer this question. (1 point)
+
+```{r}
+
+```
+
+3. What scale of measurement was used to collect this data? Explain why you think so. (3 points)
+
+**Your text here**
+
+4.	What type of statistic would be most appropriate? Why do you think so? (2 points) 
+
+**Your text here**
+
+5.	Calculate the statistic you identified in #4 (3 points)
+
+```{r}
+
+```
+
+6.	Which artist appears the most in the top 100? (1 point)
+
+**Your text here**
+
+7.	Create a graph or chart that visually depicts these data (4 points)
+
+```{r}
+
+```
+
+### Part 2: 
+They also want to better understand the tempo, or the bpm (beats per minute), of songs that make it into the top 100. 
+
+8.  Print the column that would address this question (1 point)
+
+```{r}
+
+```
+
+9. Calculate the three measures of central tendency. Interpret each value. (6 points)
+
+```{r}
+
+```
+
+10. Which central tendency measure is most appropriate for this data? Explain why (2 points)
+
+**Write your text here**
+
+11. Calculate the standard deviation. (2 points)
+
+```{r}
+
+```
+
+12. What does the standard deviation you calculated mean? (1 point)
+
+**Write your text here**
+
+13. Create a graph that visually displays your distribution. (3 points) 
+ 
+```{r}
+
+```
+ 
+### Part 3: 
+
+14. The marketing department realizes that it would be helpful to know the genre of music that appears most often. They decide to take the mean of this data. Is this correct? Explain why or why not. (2 points)
+
+**Write your text here**
+
+15. What would you suggest the marketing department do instead? Explain why.(2 points)
+
+**Write your text here**
+
+16. Calculate the more appropriate statistic and interpret the value (1 point)
+```{r}
+
+```
+
+### Part 4:  
+
+The marketing department wants to understand how danceable the songs are. 
+
+17. Print the column with the danceability data (1 point)
+```{r}
+
+```
+
+18. Convert the danceability scores to standard scores (3 points)
+```{r}
+
+```
+
+19. Graph your standard scores (3 points)
+
+```{r}
+
+```
+
+20. What do these standard scores tell us? (2 points)
+
+**Write your text here**
+
+### Part 5 
+Finally, they want to get a sense of how popular the songs are to the public. 
+
+21. What column will help Spotify answer this question? (1 point)
+
+**Write your text here**
+
+22. How can they decide which song is most popular (e.g. what statistic can they calculate)? Explain why this is the appropriate calculation (2.5 points)
+
+**Write your text here**
+
+23. Calculate the statistic. Interpret the value of this statistic (2.5 points)
+
+```{r}
+
+```
+
+**Write your text here**
